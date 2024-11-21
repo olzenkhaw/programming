@@ -157,26 +157,14 @@ function todayDate()
 
 function loadgooglescript()
 {
-    const apiKey = ''; // add your apikey
-    const spreadsheetId = '1Fr3Y3gd9VQqa4N0cvNSwNBGm2jO1l8a1hSAR_qSZk0Q';
-    const fetchData = async () => {
+    const fetchData = async (range) => {
         try {
-            // Fetch spreadsheet metadata to get the first sheet's name
-            const metadataResponse = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}?key=${apiKey}`);
-            const metadata = await metadataResponse.json();
-    
-            // Extract the name of the first sheet
-            const firstSheetName = metadata.sheets[0].properties.title;
-            console.log(`First sheet name: ${firstSheetName}`);
-    
-            // Define the range to fetch data from the first sheet
-            const range = `${firstSheetName}!A2:E`; // Adjust the range according to your data structure
-    
-            // Fetch data from the first sheet
-            const dataResponse = await fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`);
-            const data = await dataResponse.json();
-    
-            // Map the data to your desired structure
+            // Call the PHP backend to fetch data
+            const response = await fetch(`getdata.php?range=${encodeURIComponent(range)}`);
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            const data = await response.json();
             return data.values.map(row => ({
                 form: row[0],
                 date: row[1],
@@ -189,7 +177,7 @@ function loadgooglescript()
         }
     };
     
-    fetchData().then(data => {
+    fetchData('A2:E').then(data => {
         // Sort data by form, date, timeStart, and timeEnd
         let xform, xdate, xts, xte;
         console.log('data1:', JSON.parse(JSON.stringify(data)));
