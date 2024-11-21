@@ -157,7 +157,7 @@ function todayDate()
 
 function loadgooglescript()
 {
-    const apiKey = 'AIzaSyCdrnNK_bdK1CqIW7EY_8hiZg19RwDP00w';
+    const apiKey = ''; // add your apikey
     const spreadsheetId = '1Fr3Y3gd9VQqa4N0cvNSwNBGm2jO1l8a1hSAR_qSZk0Q';
     const fetchData = async () => {
         try {
