@@ -1,0 +1,97 @@
+.time-container {
+    text-align: center;
+    font-size: 5vw;
+    display: none;
+}
+
+.guide {
+    text-align: center;
+    font-size: 2vw;
+}
+
+#malaysia-time {    
+    font-weight: bold;
+}
+
+body {
+    background-color: black;
+}
+
+:fullscreen{
+    background-color: black;
+    display:inline;
+}
+
+::backdrop {
+    background: black;	
+}
+
+p { 
+    margin: 0em; 
+    font-size: 10px;
+}
+
+h1 { 
+    margin: 0em;
+    color: #fbcb40;
+}
+
+h2 { 
+    margin: 0em;
+    color: white;
+}
+
+td {
+    color:white;
+}
+
+input[type=text]{
+  text-align: center;
+  width: 100%;
+  padding: 0px 0px;
+  margin: 0px 0;
+  display: inline-block;
+  border: 0px;
+  border-radius: 0px;
+  box-sizing: border-box;
+  background-color: black;
+  font-size: 9vw;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+}
+
+.color1 {
+    color: #fbcb40;
+}
+
+.color2{
+    color: cyan;
+}
+
+.button {
+  background-color: #04AA6D;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 2vw;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.subj {
+    color: #fbcb40;
+    text-align: center;
+    font-size: 3vw;
+}
+
+select {
+    display: block;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 1.5rem;
+    width: 100%;
+    max-width: 300px;
+}
